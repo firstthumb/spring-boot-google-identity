@@ -1,0 +1,8 @@
+{
+  "clientId": "${gitkit.api.clientId}",
+  "projectId": "${gitkit.api.projectId}",
+  "serviceAccountEmail": "${gitkit.api.serviceAccountEmail}",
+  "serviceAccountPrivateKeyFile": "${gitkit.api.file}",
+  "widgetUrl": "/gitkit.html",
+  "cookieName": "gtoken"
+}

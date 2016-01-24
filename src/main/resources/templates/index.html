@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot and Thymeleaf example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script src="/webjars/jquery/2.2.0/jquery.min.js"></script>
+
+    <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" media="screen" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css"/>
+
+    <script type="text/javascript" src="//www.gstatic.com/authtoolkit/js/gitkit.js"></script>
+    <link type="text/css" rel="stylesheet" href="//www.gstatic.com/authtoolkit/css/gitkit.css"/>
+    <script type="text/javascript">
+      window.google.identitytoolkit.signInButton(
+        '#navbar', // accepts any CSS selector
+        {
+          widgetUrl: "http://localhost:8080/gitkit",
+          signOutUrl: "/",
+        }
+      );
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Spring Boot</a>
+                </div>
+                <div id="navbarB" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <div id="navbar"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h3>Spring Boot and Google Identity Toolkit API</h3>
+
+        <div th:unless="${user != null}">
+            Hello, please login
+        </div>
+        <div th:unless="${user == null}">
+            Hello <span th:text="${user.name}" />
+        </div>
+    </div>
+</body>
+</html>
